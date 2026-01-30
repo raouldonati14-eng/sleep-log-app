@@ -1,0 +1,27 @@
+/* Full screen gray background */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0; /* light gray background */
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center; /* horizontally center .app */
+}
+
+/* App container */
+.app {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* top-aligned; use center to center vertically */
+  align-items: center; /* center children horizontally */
+  width: 100%;
+  max-width: 900px; /* app max width */
+  padding: 40px 20px;
+  box-sizing: border-box;
+  background-color: #fff; /* white card background */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-height: 100vh;
+}
