@@ -1,10 +1,12 @@
 import React from "react";
 
-export default function Header() {
+const Header = ({ title }) => {
   return (
     <header>
-      <h1>Weekly Sleep Log</h1>
-      <p>Track your sleep for the week!</p>
+      <h1>{title}</h1>
+      <hr />
     </header>
   );
-}
+};
+
+export default Header;

@@ -1,18 +1,26 @@
 import React from "react";
 
-function Summary({ sleepData, completionPoints }) {
-  const totalHours = Object.values(sleepData).reduce(
-    (sum, entry) => sum + (parseFloat(entry.hours) || 0),
-    0
-  );
-
+const Summary = ({ finalThoughts, updateFinalThoughts }) => {
   return (
     <div className="Summary">
-      <h3>Summary</h3>
-      <p>Total Hours Slept: {totalHours.toFixed(2)}</p>
-      <p>Completion Points: {completionPoints} / 10</p>
+      <h3>Final Thoughts</h3>
+
+      <label>Were you successful in your challenge? (Yes / No)</label>
+      <input
+        type="text"
+        value={finalThoughts.success}
+        onChange={(e) => updateFinalThoughts("success", e.target.value)}
+        placeholder="Yes or No"
+      />
+
+      <label>Document how hard or easy this was for you</label>
+      <textarea
+        value={finalThoughts.comments}
+        onChange={(e) => updateFinalThoughts("comments", e.target.value)}
+        placeholder="Write your thoughts here..."
+      />
     </div>
   );
-}
+};
 
 export default Summary;
